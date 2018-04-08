@@ -3,8 +3,8 @@
 ## Description
 
 If you have a MacBook Pro with the touchbar this project will help you to customize your touchbar by :
- - Displaying the current connected wifi network
-
+ - Displaying the number of docker running container
+ 
 Example Full bar (3rd widget) :
 
 ![config widget](./img/full-touchbar.png)
