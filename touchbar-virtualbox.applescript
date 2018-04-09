@@ -9,7 +9,7 @@ end is_running
 
 set safRunning to is_running("VirtualBoxVM")
 if safRunning then
-	set containers to do shell script "curl -s " & docker_tcp & "/containers/json | /usr/local/bin/node -e \"var data = '', x = process.openStdin().on('data', chunk => { data += chunk }).on('end', () => { try { console.log(JSON.parse(data).length) } catch (e) { console.log(0) } });\""
+	set containers to do shell script "curl -s " & docker_tcp & "/containers/json | /usr/bin/python -c \"import sys, json; print(len(json.load(sys.stdin)))\""
 	
 	if containers = "0" then
 		return ""
